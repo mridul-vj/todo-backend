@@ -8,8 +8,8 @@ const todoSchema = mongoose.Schema({
         type: String,
     },
 }, {
-    timestamps: true, // This adds createdAt and updatedAt automatically
-    versionKey: false // This removes the __v field
+    timestamps: true,
+    versionKey: false
 });
 
 const todoModel = mongoose.model("todo", todoSchema);

@@ -46,11 +46,7 @@ app.patch('/edit/:id', isLoggedIn, async (req, res) => {
         if (title === "" || description === "") {
             return res.status(400).json({ message: "Title and Description should not be empty or null!" });
         }
-        // const { title, description } = req.body;
-        const todoEdit = await todoModel.findByIdAndUpdate(req.params.id, req.body, { new: true, overwrite: true }); // new method of update
-        // todoEdit.title = title; // old method of update
-        // todoEdit.description = description;
-        // await todoEdit.save();
+        const todoEdit = await todoModel.findByIdAndUpdate(req.params.id, req.body, { new: true, overwrite: true });
         res.status(200).json({ message: "Updated Successfully.", todo: todoEdit });
     } catch (err) {
         console.log(err);

@@ -28,8 +28,8 @@ const userSchema = mongoose.Schema({
         default: Date.now().toString()
     }
 }, {
-    timestamps: true, // This adds createdAt and updatedAt automatically
-    versionKey: false // This removes the __v field
+    timestamps: true,
+    versionKey: false
 });
 
 const userModel = mongoose.model("user", userSchema);
