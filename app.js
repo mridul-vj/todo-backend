@@ -16,13 +16,10 @@ app.use('/auth', userRoutes);
 app.use('/todo', userTodos);
 
 
-// For local development
-if (process.env.NODE_ENV !== 'production') {
-    const PORT = process.env.PORT || 3000;
-    app.listen(PORT, () => {
-        console.log(`Server is running on http://localhost:${PORT}`);
-    });
-}
+// Start server (works for both local and Render)
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
 
-// Export for Netlify serverless
 export default app;
